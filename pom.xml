@@ -19,6 +19,7 @@
     <module>kettle-sdk-partitioner-plugin</module>
     <module>kettle-sdk-step-plugin</module>
     <module>kettle-sdk-plugin-assembly</module>
+    <module>kettle-sdk-modbus-plugin</module>
   </modules>
   <properties>
     <eula-wrap_create-dist-phase></eula-wrap_create-dist-phase>
@@ -48,4 +49,49 @@
     </repository>
   </repositories>
 
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.pentaho.maven.plugins</groupId>
+                    <artifactId>license-helper-maven-plugin</artifactId>
+                    <versionRange>[1.27,)</versionRange>
+                    <goals>
+                      <goal>bundle</goal>
+                      <goal>check-license</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>com.soebes.maven.plugins</groupId>
+                    <artifactId>iterator-maven-plugin</artifactId>
+                    <versionRange>[0.5.1,)</versionRange>
+                    <goals>
+                      <goal>iterator</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>
