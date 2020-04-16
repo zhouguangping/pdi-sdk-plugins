@@ -1,5 +1,5 @@
 # PDI SDK Samples
-
+## 根据官方demo开发modbus数据采集插件
 ### Pre-requisites for building the project:
 * Maven, version 3+
 * Java JDK 1.8
